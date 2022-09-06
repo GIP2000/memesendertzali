@@ -1,6 +1,5 @@
 const axios = require("axios").default; 
 require("dotenv").config();
-const ; 
 const urlBuilder = msg=>(`https://api.telegram.org/${process.env.BOT_NUM}:${process.env.API_KEY}/sendMessage?chat_id=${process.env.CHAT_ID}&text=${msg}`);
 
 

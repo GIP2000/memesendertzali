@@ -8,5 +8,4 @@ jobs:
     steps:
       - name: Call our API route
         run: |
-          curl --request POST \
-          --url 'https://memesendertzali-production.up.railway.app/' 
+          curl --url 'https://memesendertzali-production.up.railway.app/' 

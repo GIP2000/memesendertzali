@@ -6,6 +6,15 @@ jobs:
   cron:
     runs-on: ubuntu-latest
     steps:
-      - name: Call our API route
-        run: |
-          curl --url 'https://memesendertzali-production.up.railway.app/' 
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v1
+        with:
+          node-version: '16.16.0'
+      - run: npm install
+      - name: Run Script
+        run: node index.js
+        env:
+          BOT_NUM: ${{secrets.BOT_NUM}}
+          CHAT_NUM: ${{secrets.CHAT_NUM}}
+          API_KEY: ${{secrets.API_KEY}}
+

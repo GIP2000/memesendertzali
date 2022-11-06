@@ -13,9 +13,10 @@ jobs:
           node-version: '16.16.0'
       - run: npm install
       - name: Run Script
-        run: node index.js
         env:
           BOT_NUM: ${{secrets.Prod.BOT_NUM}}
           CHAT_NUM: ${{secrets.Prod.CHAT_NUM}}
           API_KEY: ${{secrets.Prod.API_KEY}}
+        run: node index.js
+        
 

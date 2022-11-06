@@ -9,10 +9,12 @@ const sendMsg = async () => {
     let data = await axios.get("https://www.reddit.com/r/dankMemes/hot/.json?count=11");
     data = data.data.data.children;
     data = data.map(x => x.data.url_overridden_by_dest).filter((_, i) => i !== 0);
-    let request = urlBuilder(["Tzali I am going to beat the fucking shit out of you", ...data].join("\n"));
-    // data = data.map(x => urlBuilder(x.data.url_overridden_by_dest)).filter((_, i) => i !== 1);
-    axios.get(request);
-    // data.forEach(link => axios.get(link));
+    // let request = urlBuilder(["Tzali I am going to beat the fucking shit out of you", ...data].join("\n"));
+    data = data.map(x => urlBuilder(x.data.url_overridden_by_dest)).filter((_, i) => i !== 1);
+    axios.get(urlBuilder("Tzali I am going to beat the fucking shit out of you"));
+    data.forEach(link => axios.get(link).catch((_) => {
+        console.log("Rate Limited");
+    }));
 }
 
 const sendMsgServer = async (_, res) => {

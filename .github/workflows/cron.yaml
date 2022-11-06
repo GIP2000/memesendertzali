@@ -1,4 +1,8 @@
 name: daily-cron
+env:
+  BOT_NUM: ${{secrets.BOT_NUM}}
+  CHAT_NUM: ${{secrets.CHAT_NUM}}
+  API_KEY: ${{secrets.API_KEY}}
 on:
   schedule:
     - cron: '0 10 * * *'
@@ -13,10 +17,4 @@ jobs:
           node-version: '16.16.0'
       - run: npm install
       - name: Run Script
-        env:
-          BOT_NUM: ${{secrets.BOT_NUM}}
-          CHAT_NUM: ${{secrets.CHAT_NUM}}
-          API_KEY: ${{secrets.API_KEY}}
         run: node index.js
-        
-

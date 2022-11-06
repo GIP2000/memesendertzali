@@ -10,7 +10,9 @@ const sendMsg = async () => {
     data = data.data.data.children;
     data = data.map(x => urlBuilder(x.data.url_overridden_by_dest)).filter((_, i) => i !== 1);
     // let request = urlBuilder(["Tzali I am going to beat the fucking shit out of you", ...data].join("\n"));
-    axios.get(urlBuilder("Tzali I am going to beat the fucking shit out of you"));
+    await axios.get(urlBuilder("Tzali I am going to beat the fucking shit out of you")).catch(() => {
+        console.log("Rate Limited");
+    });
     data.forEach(link => axios.get(link).catch((_) => {
         console.log("Rate Limited");
     }));

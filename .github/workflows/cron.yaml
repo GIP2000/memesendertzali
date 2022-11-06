@@ -1,7 +1,7 @@
 name: daily-cron
 env:
   BOT_NUM: ${{secrets.BOT_NUM}}
-  CHAT_NUM: ${{secrets.CHAT_ID}}
+  CHAT_ID: ${{secrets.CHAT_ID}}
   API_KEY: ${{secrets.API_KEY}}
 on:
   schedule:

@@ -16,7 +16,7 @@ jobs:
         with:
           node-version: '16'
       - run: npm install
-      - run: echo ${{CHAT_ID}} is chat_id
+      - run: echo ${{secrets.CHAT_ID}} is chat_id
       - name: Run Script
         run: node index.js
         

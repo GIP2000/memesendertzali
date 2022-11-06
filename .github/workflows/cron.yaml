@@ -15,7 +15,7 @@ jobs:
       - name: Run Script
         run: node index.js
         env:
-          BOT_NUM: ${{secrets.BOT_NUM}}
-          CHAT_NUM: ${{secrets.CHAT_NUM}}
-          API_KEY: ${{secrets.API_KEY}}
+          BOT_NUM: ${{secrets.Prod.BOT_NUM}}
+          CHAT_NUM: ${{secrets.Prod.CHAT_NUM}}
+          API_KEY: ${{secrets.Prod.API_KEY}}
 

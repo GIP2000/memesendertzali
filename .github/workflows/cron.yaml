@@ -14,9 +14,9 @@ jobs:
       - run: npm install
       - name: Run Script
         env:
-          BOT_NUM: ${{secrets.Prod.BOT_NUM}}
-          CHAT_NUM: ${{secrets.Prod.CHAT_NUM}}
-          API_KEY: ${{secrets.Prod.API_KEY}}
+          BOT_NUM: ${{secrets.BOT_NUM}}
+          CHAT_NUM: ${{secrets.CHAT_NUM}}
+          API_KEY: ${{secrets.API_KEY}}
         run: node index.js
         
 
